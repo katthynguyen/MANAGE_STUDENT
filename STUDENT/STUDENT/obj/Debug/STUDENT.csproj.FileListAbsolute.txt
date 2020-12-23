@@ -1,0 +1,11 @@
+E:\STUDENT\STUDENT\STUDENT\bin\Debug\STUDENT.exe.config
+E:\STUDENT\STUDENT\STUDENT\bin\Debug\STUDENT.exe
+E:\STUDENT\STUDENT\STUDENT\bin\Debug\STUDENT.pdb
+E:\STUDENT\STUDENT\STUDENT\obj\Debug\STUDENT.csprojAssemblyReference.cache
+E:\STUDENT\STUDENT\STUDENT\obj\Debug\STUDENT.GUI.DanhSachLopHoc.resources
+E:\STUDENT\STUDENT\STUDENT\obj\Debug\STUDENT.GUI.TiepNhanHocSinh.resources
+E:\STUDENT\STUDENT\STUDENT\obj\Debug\STUDENT.Properties.Resources.resources
+E:\STUDENT\STUDENT\STUDENT\obj\Debug\STUDENT.csproj.GenerateResource.cache
+E:\STUDENT\STUDENT\STUDENT\obj\Debug\STUDENT.csproj.CoreCompileInputs.cache
+E:\STUDENT\STUDENT\STUDENT\obj\Debug\STUDENT.exe
+E:\STUDENT\STUDENT\STUDENT\obj\Debug\STUDENT.pdb
