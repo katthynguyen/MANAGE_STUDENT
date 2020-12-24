@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STUDENT.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace STUDENT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyHocSinh());
+            Application.Run(new TiepNhanHocSinh());
         }
     }
 }

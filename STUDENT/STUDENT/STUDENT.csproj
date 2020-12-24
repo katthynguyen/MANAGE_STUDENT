@@ -46,10 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\HOCSINHBUS.cs" />
+    <Compile Include="DAO\HOCSINHDAO.cs" />
     <Compile Include="DAO\SqlProvider.cs" />
+    <Compile Include="DTO\BANGDIEMMONDTO.cs" />
+    <Compile Include="DTO\HOCKYDTO.cs" />
     <Compile Include="DTO\HOCSINHDTO.cs" />
+    <Compile Include="DTO\KETQUADTO.cs" />
+    <Compile Include="DTO\KHOIDTO.cs" />
     <Compile Include="DTO\LOPDTO.cs" />
+    <Compile Include="DTO\MONHOCDTO.cs" />
     <Compile Include="DTO\PHANLOPDTO.cs" />
+    <Compile Include="DTO\THAMSODTO.cs" />
     <Compile Include="GUI\BaoCaoTongKetMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,8 +172,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BUS\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

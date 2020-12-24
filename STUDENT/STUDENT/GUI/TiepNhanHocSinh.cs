@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STUDENT.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,13 @@ namespace STUDENT.GUI
         public TiepNhanHocSinh()
         {
             InitializeComponent();
+            LoadHocSinh();
         }
 
-       
+        public void LoadHocSinh()
+        {
+            HOCSINHBUS bus = new HOCSINHBUS();
+            dgvHocSinh.DataSource = bus.GetAllHocSinh();
+        }
     }
 }
