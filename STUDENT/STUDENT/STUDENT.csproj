@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\SqlProvider.cs" />
+    <Compile Include="DTO\HOCSINHDTO.cs" />
+    <Compile Include="DTO\LOPDTO.cs" />
+    <Compile Include="DTO\PHANLOPDTO.cs" />
     <Compile Include="GUI\BaoCaoTongKetMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,8 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BUS\" />
-    <Folder Include="DAO\" />
-    <Folder Include="DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
