@@ -10,15 +10,13 @@ namespace STUDENT.DAO
 {
     public class SqlProvider
     {
-        public static string connectionString = "";
+        public static string connectionString = @"Data Source=DESKTOP-7GDQBCU\SQLEXPRESS;Initial Catalog=QLHS;Integrated Security=True";
         public static SqlConnection connection = null;
 
         public static void OpenConnection()
         {
-            if(connection == null)
-            {
+            if (connection == null)
                 connection = new SqlConnection(connectionString);
-            }
             if (connection != null)
                 connection.Open();
         }
