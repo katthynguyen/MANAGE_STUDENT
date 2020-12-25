@@ -8,18 +8,18 @@ namespace STUDENT.DTO
 {
     public class HOCSINHDTO
     {
-        private string MaHocSinh;
-        private string TenHocSinh;
-        private string GioiTinh;
-        private DateTime NgaySinh;
-        private string DiaChi;
-        private string Email;
+        private string maHocSinh;
+        private string tenHocSinh;
+        private string gioiTinh;
+        private DateTime ngaySinh;
+        private string diaChi;
+        private string email;
 
-        public string MaHocSinh1 { get => MaHocSinh; set => MaHocSinh = value; }
-        public string TenHocSinh1 { get => TenHocSinh; set => TenHocSinh = value; }
-        public string GioiTinh1 { get => GioiTinh; set => GioiTinh = value; }
-        public DateTime NgaySinh1 { get => NgaySinh; set => NgaySinh = value; }
-        public string DiaChi1 { get => DiaChi; set => DiaChi = value; }
-        public string Email1 { get => Email; set => Email = value; }
+        public string MaHocSinh { get => maHocSinh; set => maHocSinh = value; }
+        public string TenHocSinh { get => tenHocSinh; set => tenHocSinh = value; }
+        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string Email { get => email; set => email = value; }
     }
 }

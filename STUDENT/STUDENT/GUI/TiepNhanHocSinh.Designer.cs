@@ -328,6 +328,7 @@
             // 
             // dtNgaySinh
             // 
+            this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNgaySinh.Location = new System.Drawing.Point(136, 112);
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(213, 26);
