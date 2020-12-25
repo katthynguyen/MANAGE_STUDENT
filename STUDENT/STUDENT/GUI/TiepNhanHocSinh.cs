@@ -16,13 +16,31 @@ namespace STUDENT.GUI
         public TiepNhanHocSinh()
         {
             InitializeComponent();
+            
+        }       
+
+        private void TiepNhanHocSinh_Load(object sender, EventArgs e)
+        {
             LoadHocSinh();
         }
-
-        public void LoadHocSinh()
+        void LoadHocSinh()
         {
             HOCSINHBUS bus = new HOCSINHBUS();
             dgvHocSinh.DataSource = bus.GetAllHocSinh();
+        }
+
+     
+
+        private void dgvHocSinh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idx = dgvHocSinh.CurrentRow.Index;
+            var dgvSelect = dgvHocSinh.SelectedRows[0];
+            txtMaHocSinh.Text = dgvHocSinh.Rows[idx].Cells["MaHocSinh"].Value.ToString();
+            txtHoTen.Text = dgvHocSinh.Rows[idx].Cells["TenHocSinh"].Value.ToString();
+            //dtNgaySinh.Value = DateTime.Parse(dgvSelect.Cells["NgaySinh"].ToString());
+            txtEmail.Text = dgvHocSinh.Rows[idx].Cells["Email"].Value.ToString();
+            txtDiaChi.Text = dgvHocSinh.Rows[idx].Cells["DiaChi"].Value.ToString();
+            
         }
     }
 }

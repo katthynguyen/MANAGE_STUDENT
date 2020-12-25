@@ -15,6 +15,7 @@ namespace STUDENT
         public QuanLyHocSinh()
         {
             InitializeComponent();
+
         }
     }
 }

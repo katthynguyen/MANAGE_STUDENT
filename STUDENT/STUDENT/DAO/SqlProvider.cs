@@ -42,9 +42,12 @@ namespace STUDENT.DAO
         {
             OpenConnection();
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(connectionString, query);
+            SqlCommand command = new SqlCommand();
+            command.CommandText = query;
+            command.Connection = connection;
+            SqlDataAdapter da = new SqlDataAdapter(command);
             da.Fill(dt);
-            CloseConnection();
+            //CloseConnection();
             return dt;
         }
      }

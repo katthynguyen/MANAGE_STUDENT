@@ -128,6 +128,7 @@
             // 
             this.gbChiTietHS.Controls.Add(this.dgvHocSinh);
             this.gbChiTietHS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbChiTietHS.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbChiTietHS.Location = new System.Drawing.Point(0, 0);
             this.gbChiTietHS.Name = "gbChiTietHS";
             this.gbChiTietHS.Size = new System.Drawing.Size(515, 539);
@@ -140,10 +141,11 @@
             this.dgvHocSinh.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHocSinh.Location = new System.Drawing.Point(3, 25);
+            this.dgvHocSinh.Location = new System.Drawing.Point(3, 17);
             this.dgvHocSinh.Name = "dgvHocSinh";
-            this.dgvHocSinh.Size = new System.Drawing.Size(509, 511);
+            this.dgvHocSinh.Size = new System.Drawing.Size(509, 519);
             this.dgvHocSinh.TabIndex = 0;
+            this.dgvHocSinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocSinh_CellClick);
             // 
             // groupBox2
             // 
@@ -439,6 +441,7 @@
             this.Name = "TiepNhanHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TiepNhanHocSinh";
+            this.Load += new System.EventHandler(this.TiepNhanHocSinh_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
