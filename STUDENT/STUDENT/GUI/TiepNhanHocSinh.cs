@@ -28,19 +28,33 @@ namespace STUDENT.GUI
             HOCSINHBUS bus = new HOCSINHBUS();
             dgvHocSinh.DataSource = bus.GetAllHocSinh();
         }
-
-     
-
-        private void dgvHocSinh_CellClick(object sender, DataGridViewCellEventArgs e)
+          
+                
+        private void dgvHocSinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idx = dgvHocSinh.CurrentRow.Index;
-            var dgvSelect = dgvHocSinh.SelectedRows[0];
             txtMaHocSinh.Text = dgvHocSinh.Rows[idx].Cells["MaHocSinh"].Value.ToString();
             txtHoTen.Text = dgvHocSinh.Rows[idx].Cells["TenHocSinh"].Value.ToString();
-            //dtNgaySinh.Value = DateTime.Parse(dgvSelect.Cells["NgaySinh"].ToString());
+            dtNgaySinh.Text = dgvHocSinh.Rows[idx].Cells["NgaySinh"].Value.ToString(); 
             txtEmail.Text = dgvHocSinh.Rows[idx].Cells["Email"].Value.ToString();
             txtDiaChi.Text = dgvHocSinh.Rows[idx].Cells["DiaChi"].Value.ToString();
+
+            string gioitinh = dgvHocSinh.Rows[idx].Cells["GioiTinh"].Value.ToString();
             
+            if (gioitinh == "Nam")
+            {
+                rdbNam.Checked = true;
+            }  
+            else if (gioitinh == "Nữ")
+            {
+                rdbNu.Checked = true;
+            }
+                
+        }
+
+        private void btnExitHocSinh_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
