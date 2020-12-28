@@ -47,7 +47,7 @@ namespace STUDENT.DAO
             command.Connection = connection;
             SqlDataAdapter da = new SqlDataAdapter(command);
             da.Fill(dt);
-            //CloseConnection();
+            CloseConnection();
             return dt;
         }
      }

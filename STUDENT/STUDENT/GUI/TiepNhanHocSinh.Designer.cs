@@ -33,6 +33,12 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gbChiTietHS = new System.Windows.Forms.GroupBox();
             this.dgvHocSinh = new System.Windows.Forms.DataGridView();
+            this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBangDiem = new System.Windows.Forms.Button();
             this.btnQuyDinhTiepNhan = new System.Windows.Forms.Button();
@@ -60,12 +66,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaHocSinh = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -165,6 +165,48 @@
             this.dgvHocSinh.TabIndex = 0;
             this.dgvHocSinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocSinh_CellContentClick);
             // 
+            // MaHocSinh
+            // 
+            this.MaHocSinh.DataPropertyName = "MaHocSinh";
+            this.MaHocSinh.HeaderText = "ID";
+            this.MaHocSinh.Name = "MaHocSinh";
+            this.MaHocSinh.ReadOnly = true;
+            // 
+            // TenHocSinh
+            // 
+            this.TenHocSinh.DataPropertyName = "TenHocSinh";
+            this.TenHocSinh.HeaderText = "Họ Tên";
+            this.TenHocSinh.Name = "TenHocSinh";
+            this.TenHocSinh.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnBangDiem);
@@ -257,6 +299,7 @@
             this.btnSuaHocSinh.TabIndex = 21;
             this.btnSuaHocSinh.Text = "Sửa";
             this.btnSuaHocSinh.UseVisualStyleBackColor = false;
+            this.btnSuaHocSinh.Click += new System.EventHandler(this.btnSuaHocSinh_Click);
             // 
             // btnXoaHocSinh
             // 
@@ -268,6 +311,7 @@
             this.btnXoaHocSinh.TabIndex = 20;
             this.btnXoaHocSinh.Text = "Xóa";
             this.btnXoaHocSinh.UseVisualStyleBackColor = false;
+            this.btnXoaHocSinh.Click += new System.EventHandler(this.btnXoaHocSinh_Click);
             // 
             // btnThemHocSinh
             // 
@@ -279,6 +323,7 @@
             this.btnThemHocSinh.TabIndex = 19;
             this.btnThemHocSinh.Text = "Thêm";
             this.btnThemHocSinh.UseVisualStyleBackColor = false;
+            this.btnThemHocSinh.Click += new System.EventHandler(this.btnThemHocSinh_Click);
             // 
             // dtNamHoc
             // 
@@ -435,8 +480,10 @@
             // 
             // txtMaHocSinh
             // 
+            this.txtMaHocSinh.Enabled = false;
             this.txtMaHocSinh.Location = new System.Drawing.Point(136, 36);
             this.txtMaHocSinh.Name = "txtMaHocSinh";
+            this.txtMaHocSinh.ReadOnly = true;
             this.txtMaHocSinh.Size = new System.Drawing.Size(158, 26);
             this.txtMaHocSinh.TabIndex = 1;
             // 
@@ -449,48 +496,6 @@
             this.label2.Size = new System.Drawing.Size(93, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Học Sinh:";
-            // 
-            // MaHocSinh
-            // 
-            this.MaHocSinh.DataPropertyName = "MaHocSinh";
-            this.MaHocSinh.HeaderText = "ID";
-            this.MaHocSinh.Name = "MaHocSinh";
-            this.MaHocSinh.ReadOnly = true;
-            // 
-            // TenHocSinh
-            // 
-            this.TenHocSinh.DataPropertyName = "TenHocSinh";
-            this.TenHocSinh.HeaderText = "Họ Tên";
-            this.TenHocSinh.Name = "TenHocSinh";
-            this.TenHocSinh.ReadOnly = true;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới Tính";
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.ReadOnly = true;
             // 
             // TiepNhanHocSinh
             // 

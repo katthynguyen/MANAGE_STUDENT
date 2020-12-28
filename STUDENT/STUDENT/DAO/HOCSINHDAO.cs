@@ -12,21 +12,46 @@ namespace STUDENT.DAO
     {
         public void InsertHocSinh(HOCSINHDTO hs)
         {
-            
+            string prefix = "HS100";
+            int n = int.Parse(hs.MaHocSinh.Substring(5));
+            while (CheckIDisUse(hs.MaHocSinh))
+            {
+                n++;
+                hs.MaHocSinh = string.Format("{0}{1}", prefix, n);
+            }
+            string query = "INSERT INTO HOCSINH(MaHocSinh, TenHocSinh, GioiTinh, NgaySinh, DiaChi, Email) VALUES ('" + hs.MaHocSinh + "','" + hs.TenHocSinh + "','" + hs.GioiTinh + "','" + hs.NgaySinh + "','" + hs.DiaChi + "','" + hs.Email + "')";
+            SqlProvider.ExecuteNoneQuery(query);
+
         }
 
         public void UpdateHocSinh(HOCSINHDTO hs)
         {
-
+            string query = string.Format("UPDATE HOCSINH set TenHocSinh = N'{0}', " +
+                "NgaySinh = '{1}', DiaChi = N'{2}', " +
+                "Email = '{3}', GioiTinh = N'{4}' " +
+                "WHERE MaHocSinh = '{5}'", hs.TenHocSinh, hs.NgaySinh, hs.DiaChi, hs.Email, hs.GioiTinh, hs.MaHocSinh);
+            SqlProvider.ExecuteNoneQuery(query);
         }
-        public void DeleteSinh(HOCSINHDTO hs)
+        public void DeleteHocSinh(string id)
         {
-            
+            string query = string.Format("DELETE FROM HOCSINH WHERE MaHocSinh = '{0}'", id);
+            DataTable dt = SqlProvider.ExecuteQuery(query);            
         }
         public DataTable GetAllHocSinh()
         {
             string query = "SELECT * FROM HOCSINH";
             return SqlProvider.ExecuteQuery(query);
+        }
+
+        bool CheckIDisUse(string id)
+        {
+            string query = string.Format("SELECT * From HOCSINH Where MaHocSinh = '{0}'", id);
+            DataTable dt = SqlProvider.ExecuteQuery(query);
+            if(dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
