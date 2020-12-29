@@ -19,7 +19,7 @@ namespace STUDENT.DAO
                 n++;
                 hs.MaHocSinh = string.Format("{0}{1}", prefix, n);
             }
-            string query = "INSERT INTO HOCSINH(MaHocSinh, TenHocSinh, GioiTinh, NgaySinh, DiaChi, Email) VALUES ('" + hs.MaHocSinh + "','" + hs.TenHocSinh + "','" + hs.GioiTinh + "','" + hs.NgaySinh + "','" + hs.DiaChi + "','" + hs.Email + "')";
+            string query = "INSERT INTO HOCSINH(MaHocSinh, TenHocSinh, GioiTinh, NgaySinh, DiaChi, Email) VALUES (N'" + hs.MaHocSinh + "',N'" + hs.TenHocSinh + "',N'" + hs.GioiTinh + "',N'" + hs.NgaySinh + "',N'" + hs.DiaChi + "',N'" + hs.Email + "')";
             SqlProvider.ExecuteNoneQuery(query);
 
         }
@@ -51,6 +51,18 @@ namespace STUDENT.DAO
             {
                 return true;
             }
+            return false;
+        }
+
+        public bool CheckAge(int age)
+        {
+            string query = "SELECT * FROM THAMSO";
+            DataTable dt = SqlProvider.ExecuteQuery(query);
+
+            int max_age = dt.Rows[0].Field<int>("TuoiHocSinhToiDa");
+            int min_age = dt.Rows[0].Field<int>("TuoiHocSinhToiThieu");
+            if (age > min_age && age < max_age)
+                return true;
             return false;
         }
     }

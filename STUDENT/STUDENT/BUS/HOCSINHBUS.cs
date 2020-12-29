@@ -11,29 +11,36 @@ namespace STUDENT.BUS
 {
     public class HOCSINHBUS
     {
+        HOCSINHDAO dao;
         
         public DataTable GetAllHocSinh()
         {
-            HOCSINHDAO dao = new HOCSINHDAO();
+            dao = new HOCSINHDAO();
             return dao.GetAllHocSinh();
         }
 
         public void InsertHocSinh(HOCSINHDTO hs)
         {
-            HOCSINHDAO dao = new HOCSINHDAO();
+            dao = new HOCSINHDAO();
             dao.InsertHocSinh(hs);
 
         }
 
         public void UpdateHocSinh(HOCSINHDTO hs)
         {
-            HOCSINHDAO dao = new HOCSINHDAO();
+            dao = new HOCSINHDAO();
             dao.UpdateHocSinh(hs);
         }
         public void DeleteHocSinh(string id)
         {
-            HOCSINHDAO dao = new HOCSINHDAO();
+            dao = new HOCSINHDAO();
             dao.DeleteHocSinh(id);
+        }
+
+        public bool CheckAge(int age)
+        {
+            dao = new HOCSINHDAO();
+            return dao.CheckAge(age);
         }
     }
 }

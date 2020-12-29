@@ -51,6 +51,7 @@ namespace STUDENT.GUI
             {
                 rdbNu.Checked = true;
             }
+            
         }
 
         private void btnExitHocSinh_Click(object sender, EventArgs e)
@@ -75,6 +76,7 @@ namespace STUDENT.GUI
         void AddHocSinh()
         {
             HOCSINHDTO hs = new HOCSINHDTO();
+            HOCSINHBUS bus = new HOCSINHBUS();
             string prefix = "HS100";
             int n = dgvHocSinh.Rows.Count + 1;
             hs.MaHocSinh = string.Format("{0}{1}", prefix, n);
@@ -106,6 +108,11 @@ namespace STUDENT.GUI
                     MessageBox.Show("Hãy xác định giới tính của bạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 }
+                else if(bus.CheckAge(DateTime.Now.Year - dtNgaySinh.Value.Year) == false)
+                {
+                    MessageBox.Show("Tuổi của bạn không phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                }
                 else
                 {
                     if (rdbNam.Checked)
@@ -121,8 +128,7 @@ namespace STUDENT.GUI
                     hs.NgaySinh = dtNgaySinh.Value;
                     hs.DiaChi = txtDiaChi.Text;
                     hs.Email = txtEmail.Text;
-
-                    HOCSINHBUS bus = new HOCSINHBUS();
+                                        
                     bus.InsertHocSinh(hs);
                     MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
